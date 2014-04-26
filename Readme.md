@@ -33,6 +33,6 @@ credentials with the client. Unlike the resource owner credentials,
 tokens can be issued with a restricted scope and limited lifetime,
 and revoked independently.
 
-Why version OAuth 1.0 when it's depriciated?
+Why version OAuth 1.0 when it's depreciated?
 
  * oDesk.com
