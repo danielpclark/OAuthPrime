@@ -32,18 +32,16 @@ module OAP
 			params[ 'oauth_token' ] = @access_token
 		end
 
-		gsbs = (
-			@client_method.upcase +
-			'&' +
-			sanitize_to_RFC_3986( @server_uri ) +
-			'&' +
-			sanitize_to_RFC_3986(
-				generate_header( 
-					@params.tap { | prms |
-						# "oauth_signature" parameter MUST be excluded from the signature http://tools.ietf.org/html/rfc5849#section-3.4.1.3.1
-						prms.has_key?( "oauth_signature" ) ? prms.delete( "oauth_signature" ) : prms
-					}
-				)
+		@client_method.upcase +
+		'&' +
+		sanitize_to_RFC_3986( @server_uri ) +
+		'&' +
+		sanitize_to_RFC_3986(
+			generate_header( 
+				@params.tap { | prms |
+					# "oauth_signature" parameter MUST be excluded from the signature http://tools.ietf.org/html/rfc5849#section-3.4.1.3.1
+					prms.has_key?( "oauth_signature" ) ? prms.delete( "oauth_signature" ) : prms
+				}
 			)
 		)
 	end
