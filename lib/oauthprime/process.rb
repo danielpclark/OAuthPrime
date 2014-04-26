@@ -1,4 +1,3 @@
-
 class Hash
 	def store_if( truth, key, val )
 		if truth
@@ -47,7 +46,7 @@ module OAP
 			":"   =>	"%3A", # Pay attention to root urls!
 			";"   =>	"%3B",
 			"="   =>	"%3D",
-			"?"   =>    "%3F",
+			"?"   =>	"%3F",
 			"@"   =>	"%40",
 			"["   =>	"%5B",
 			"]"   =>	"%5D"
